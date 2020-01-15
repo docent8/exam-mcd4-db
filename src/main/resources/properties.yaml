@@ -1,0 +1,8 @@
+db:
+  host: "mudb.learn.mulesoft.com"
+  port: "3306"
+  username: "mule"
+  password: "mule"
+  database: "training"
+plane:
+  type: "Boeing 737"
