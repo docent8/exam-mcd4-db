@@ -25,7 +25,16 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-				<sharedLibraries>
+					<cloudHubDeployment>
+					  <muleVersion>${app.runtime}</muleVersion>
+					  <username>janrakusa1</username>
+					  <password>-epNimtLA@Uco2A_iXPq</password>
+					  <applicationName>${project.artifactId}</applicationName>
+					  <environment>Sandbox</environment>
+					  <workerType>Micro</workerType>
+					  <objectStoreV2>true</objectStoreV2>
+					</cloudHubDeployment>						
+					<sharedLibraries>
                         <sharedLibrary>
                             <groupId>mysql</groupId>
                             <artifactId>mysql-connector-java</artifactId>
@@ -71,7 +80,7 @@
 	      <layout>default</layout>
 	    </repository>
     </distributionManagement>
-	
+
 	<repositories>
           <repository>
             <id>anypoint-exchange-v2</id>
