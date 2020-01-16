@@ -17,6 +17,18 @@
 		<mule.maven.plugin.version>3.3.5</mule.maven.plugin.version>
 	</properties>
 
+	<profiles>
+		<profile>
+			<id>trial</id>
+			<properties>
+				<build.profile.id>trial</build.profile.id>
+				<cloud.user>janrakusa1</cloud.user>
+				<cloud.password>-epNimtLA@Uco2A_iXPq</cloud.password>
+				<cloud.environment>Sandbox</cloud.environment>
+			</properties>
+		</profile>
+	</profiles>
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -27,10 +39,10 @@
 				<configuration>
 					<cloudHubDeployment>
 					  <muleVersion>${app.runtime}</muleVersion>
-					  <username>janrakusa1</username>
-					  <password>-epNimtLA@Uco2A_iXPq</password>
+					  <username>${cloud.user}</username>
+					  <password>${cloud.password}</password>
 					  <applicationName>${project.artifactId}</applicationName>
-					  <environment>Sandbox</environment>
+					  <environment>${cloud.environment}</environment>
 					  <workerType>Micro</workerType>
 					  <objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>						
