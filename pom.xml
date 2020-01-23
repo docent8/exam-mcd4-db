@@ -19,12 +19,25 @@
 
 	<profiles>
 		<profile>
-			<id>trial</id>
+			<id>dev</id>
 			<properties>
-				<build.profile.id>trial</build.profile.id>
-				<cloud.user>janrakusa1</cloud.user>
-				<cloud.password>-epNimtLA@Uco2A_iXPq</cloud.password>
-				<cloud.environment>Sandbox</cloud.environment>
+				<!--<build.profile.id>dev</build.profile.id>-->
+				<cloud.environment>Dev</cloud.environment>
+				<cloud.appName>dev-${project.artifactId}</cloud.appName>
+			</properties>
+		</profile>
+		<profile>
+			<id>sit</id>
+			<properties>
+				<cloud.environment>Sit</cloud.environment>
+				<cloud.appName>sit-${project.artifactId}</cloud.appName>
+			</properties>
+		</profile>
+		<profile>
+			<id>uat</id>
+			<properties>
+				<cloud.environment>Uat</cloud.environment>
+				<cloud.appName>uat-${project.artifactId}</cloud.appName>
 			</properties>
 		</profile>
 	</profiles>
@@ -39,9 +52,9 @@
 				<configuration>
 					<cloudHubDeployment>
 					  <muleVersion>${app.runtime}</muleVersion>
-					  <username>${cloud.user}</username>
-					  <password>${cloud.password}</password>
-					  <applicationName>${project.artifactId}</applicationName>
+					  <username>janrakusa1</username>
+					  <password>-epNimtLA@Uco2A_iXPq</password>
+					  <applicationName>${cloud.appName}</applicationName>
 					  <environment>${cloud.environment}</environment>
 					  <workerType>Micro</workerType>
 					  <objectStoreV2>true</objectStoreV2>
